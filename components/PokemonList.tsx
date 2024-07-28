@@ -50,9 +50,9 @@ const PokemonList = () => {
 
   useEffect(() => {
     const handleSearch = () => {
-      if (value) {
+      if (value.toLowerCase()) {
         const filteredPokemons = allPokemons.filter((pokemon) =>
-          pokemon.name.toLowerCase().includes(value)
+          pokemon.name.toLowerCase().includes(value.toLowerCase())
         );
         setDisplayedPokemons(filteredPokemons);
         setHasMore(false);
