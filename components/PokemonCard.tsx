@@ -131,6 +131,7 @@ const PokemonCard = ({ pokemon }: Props) => {
           </div>
           {!isClicked ? (
             <Image
+              unoptimized
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`}
               alt={`${pokemon.name}`}
               width={180}
