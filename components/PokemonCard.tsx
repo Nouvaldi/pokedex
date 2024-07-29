@@ -141,28 +141,9 @@ const PokemonCard = ({ pokemon }: Props) => {
             />
           ) : (
             <div className="w-[180px] h-[180px] flex flex-col items-center justify-center p-4 select-none">
-              {/* <Image
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${pokemonId}.png`}
-                alt={`${pokemon.name}`}
-                width={180}
-                height={180}
-                className="absolute -z-50 opacity-10"
-              /> */}
               <div className="capitalize font-bold mt-2 text-center text-sm">
                 {pokemon.name}
               </div>
-              {/* <div className="flex items-center justify-between w-full">
-                <FaWeightHanging />
-                {data?.weight && data.weight / 10} kg
-              </div>
-              <div className="flex items-center justify-between w-full">
-                <GiBodyHeight />
-                {data?.height && data.height / 10} m
-              </div> */}
-              {/* {data?.abilities &&
-                data.abilities.map((ability, index) => (
-                  <span key={index}>{ability.ability.name}</span>
-                ))} */}
               {data?.stats &&
                 data.stats.map((stat, index) => (
                   <div

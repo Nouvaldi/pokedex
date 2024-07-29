@@ -9,7 +9,7 @@ export async function getAllPokemon() {
     console.log(data.results);
     return data.results;
   } catch (error) {
-    console.log(error);
+    console.log('Error fetching data:', error);
     return null;
   }
 }

@@ -1,15 +1,16 @@
 "use client";
 
 import React from "react";
-import { useState, useEffect, ChangeEvent } from "react";
+import { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { getAllPokemon } from "@/app/actions/getAllPokemon";
 import PokemonCard from "./PokemonCard";
 import { Input } from "./ui/input";
-import { ClipLoader, PuffLoader } from "react-spinners";
+import { PuffLoader } from "react-spinners";
 import { Pokemon } from "./PokemonCard";
 import { motion } from "framer-motion";
 import { useDebounce } from "use-debounce";
+import { ScrollToTopButton } from "./ScrollToTopButton";
 
 const PokemonList = () => {
   const [allPokemons, setAllPokemons] = useState<Pokemon[]>([]);
@@ -79,13 +80,14 @@ const PokemonList = () => {
       transition={{ delay: 0.5, duration: 0.5 }}
       className="flex flex-col justify-center items-center pt-10 w-full"
     >
+      <ScrollToTopButton />
       <Input
         type="text"
         autoComplete="off"
         placeholder="Search for a Pokemon"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
-        className="w-3/4 md:w-1/2 drop-shadow-md rounded-full p-6"
+        className="w-3/4 md:w-1/2 drop-shadow-md rounded-full p-6 transition-all ease-in-out"
       />
       <InfiniteScroll
         dataLength={pokemons.length}
